@@ -41,8 +41,11 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.portainer.entrypoints=web"
       - "traefik.http.routers.portainer.rule=Host(`portainer.$MY_DOMAIN`)"
-      
+
 networks:
   default:
     external:
       name: $DEFAULT_NETWORK
+
+volumes:
+  portainer_data: {}
